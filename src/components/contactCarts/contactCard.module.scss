@@ -1,0 +1,36 @@
+.contactCards {
+  padding: 100px 0;
+  ul {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    li {
+      text-align: center;
+      background-color: #fdf5e6;
+      padding: 40px 40px 56px;
+      width: 370px;
+      svg {
+        margin: 0 auto;
+      }
+      h2 {
+        margin-top: 1rem 0 10px;
+      }
+      span {
+        display: block;
+        max-width: 260px;
+      }
+      .emailIcon path {
+        stroke: #c6651a;
+      }
+    }
+  }
+  @media screen and (max-width: 640px) {
+    + section {
+      margin-top: 100px;
+    }
+    padding-bottom: 0;
+    ul {
+      flex-direction: column;
+    }
+  }
+}

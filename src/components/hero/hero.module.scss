@@ -1,0 +1,52 @@
+.hero {
+  height: 100vh;
+  padding: 80px 0 60px 0;
+  background-color: #fdf5e6;
+  > div {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    > div {
+      width: 50%;
+    }
+  }
+  h1 {
+    font-size: 5.625rem;
+    color: #053543;
+    margin-bottom: 20px;
+  }
+  .description {
+    color: #7a7a7a;
+    margin-bottom: 20px;
+  }
+  .btn {
+    display: flex;
+    gap: 20px;
+  }
+  .image {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    img:last-child {
+      position: absolute;
+      bottom: -20%;
+      left: 0;
+    }
+  }
+  @media screen and (max-width: 821px) {
+    height: 60vh;
+    padding-bottom: 20px;
+    > div > div {
+      width: 65%;
+    }
+    .image {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 640px) {
+    h1 {
+      font-size: 3.625rem;
+    }
+  }
+}

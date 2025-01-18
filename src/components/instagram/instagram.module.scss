@@ -1,0 +1,50 @@
+.wrapper {
+  padding: 50px 20px 5px;
+  .text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    > div:first-child::after {
+      left: 10px;
+    }
+  }
+  .instagram {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 0.8rem;
+  }
+  .item {
+    position: relative;
+    cursor: pointer;
+    &:hover {
+      .logoContainer {
+        display: grid;
+      }
+    }
+  }
+  .username {
+    font-size: 42px;
+    color: #053543;
+    margin: 20px 0 40px;
+  }
+  .logoContainer {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    place-items: center;
+    display: none;
+    z-index: 1;
+  }
+  @media screen and (max-width: 821px) {
+    .instagram {
+      grid-template-columns: repeat(3, 1fr);
+      row-gap: 1rem;
+    }
+  }
+  @media screen and (max-width: 640px) {
+    .instagram {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}

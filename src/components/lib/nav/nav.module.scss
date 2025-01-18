@@ -1,0 +1,10 @@
+.nav ul {
+  display: flex;
+  gap: 2rem;
+  font-size: 14px;
+  color: black;
+}
+
+.active {
+  background-color: red;
+}

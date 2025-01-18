@@ -1,0 +1,95 @@
+.wrapper {
+  background-color: #053543;
+  color: white;
+  > div {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    > div {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      > div {
+        width: 24%;
+      }
+    }
+    @media screen and (max-width: 801px) {
+      > div {
+        > div {
+          width: 50%;
+        }
+      }
+    }
+
+    @media screen and (max-width: 640px) {
+      > div {
+        flex-direction: column;
+        > div {
+          width: 100%;
+        }
+      }
+    }
+  }
+  .top {
+    padding: 20px 0 60px;
+    + div {
+      padding: 20px 0;
+      > div {
+        width: unset;
+      }
+    }
+  }
+  h4 {
+    color: #fdf5e6;
+    font-size: 26px;
+    margin-bottom: 20px;
+  }
+  .logo {
+    margin-bottom: 5px;
+  }
+  li {
+    margin-bottom: 15px;
+  }
+  .description {
+    margin-bottom: 20px;
+  }
+
+  .newsletter {
+    form {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    input {
+      height: 42px;
+      background-color: transparent;
+      border: 1px solid white;
+      padding: 6px 12px;
+      &::placeholder {
+        color: white;
+      }
+    }
+    button {
+      top: 0;
+      height: 100%;
+      font-size: 16px;
+      padding: 12px 20px;
+      background-color: #fdf5e6;
+      border: 1px solid #fdf5e6;
+      color: #053543;
+    }
+    @media screen and (min-width: 801px) {
+      width: 100%;
+    }
+  }
+  .socials {
+    display: flex;
+    gap: 2rem;
+    margin: 20px 0;
+    svg {
+      height: 1.25rem;
+      width: 1.25rem;
+    }
+  }
+}

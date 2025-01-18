@@ -1,0 +1,109 @@
+.wrapper {
+  padding: 30px 30px 100px;
+  .text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 570px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  h5 {
+    margin-bottom: 30px;
+    &::after {
+      left: 10px;
+    }
+  }
+  h2 {
+    margin-bottom: 20px;
+    white-space: nowrap;
+  }
+  .pictures {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 30px;
+    img {
+      width: 100%;
+    }
+    @media screen and (max-width: 640px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media screen and (max-width: 640px) {
+    h2 {
+      white-space: unset;
+    }
+    .pictures {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  .item {
+    position: relative;
+  }
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: none;
+  }
+  .jobTitle {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  .name {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  .socials {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+}
+
+.meaWrapper {
+  padding: 100px 0;
+  > div {
+    display: flex;
+    gap: 2.5rem;
+    > div {
+      width: 50%;
+    }
+  }
+  h5 {
+    margin-bottom: 20px;
+  }
+  h2 {
+    margin-bottom: 30px;
+  }
+  button {
+    margin-top: 2rem;
+  }
+  .wrapperItem {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    .name {
+      margin: 20px 0 5px;
+      font-size: 28px;
+      color: #053543;
+    }
+  }
+  @media screen and (max-width: 821px) {
+    > div {
+      flex-direction: column;
+      > div {
+        width: 100% !important;
+      }
+    }
+    img {
+      width: 100%;
+    }
+  }
+}

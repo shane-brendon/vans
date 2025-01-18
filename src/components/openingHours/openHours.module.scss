@@ -1,0 +1,69 @@
+.wrapper {
+  background: transparent;
+  color: white;
+  position: relative;
+
+  background-image: url("/background-fixed.jpg");
+  height: 100%;
+  width: 100%;
+  background-position: 50%;
+  background-size: cover;
+  background-attachment: fixed;
+  top: 0;
+  left: 0;
+
+  > div {
+    display: flex;
+    padding: 100px;
+    > div {
+      width: 50%;
+    }
+  }
+  h5 {
+    margin-bottom: 20px;
+    color: white;
+  }
+  h2 {
+    margin-bottom: 30px;
+    color: white;
+  }
+  .text {
+    max-width: 450px;
+  }
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  ul {
+    margin-bottom: 20px;
+    padding: 0 10px;
+  }
+  li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    position: relative;
+  }
+  @media screen and (max-width: 821px) {
+    background-position: 70%;
+    .placeholder {
+      display: none;
+    }
+
+    > div {
+      > div {
+        width: 100%;
+      }
+    }
+  }
+  @media screen and (max-width: 640px) {
+    .container {
+      padding: 100px 0;
+    }
+    > div {
+      padding: 100px 0;
+    }
+  }
+}
