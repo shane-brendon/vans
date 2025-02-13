@@ -1,14 +1,26 @@
-import styles from "./button.module.scss";
+import Link from "next/link"
+import styles from "./button.module.scss"
 
-function ButtonCustom({ isFill, text, type = "btn " }) {
+function ButtonCustom({ isFill, text, type = "btn", href = "/" }) {
   return (
-    <button
-      type={type}
-      className={`${styles.btn} ${isFill ? styles.fill : ""}`}
-    >
-      {text}
-    </button>
-  );
+    <>
+      {type === "link" ? (
+        <Link
+          className={`${styles.btn} ${isFill ? styles.fill : ""}`}
+          href={href}
+        >
+          {text}
+        </Link>
+      ) : (
+        <button
+          type={type}
+          className={`${styles.btn} ${isFill ? styles.fill : ""}`}
+        >
+          {text}
+        </button>
+      )}
+    </>
+  )
 }
 
-export default ButtonCustom;
+export default ButtonCustom

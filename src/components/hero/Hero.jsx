@@ -1,24 +1,27 @@
-import Image from "next/image";
-import ButtonCustom from "../lib/button/ButtonCustom";
-import styles from "./hero.module.scss";
-import { amiri } from "@/src/utils/fonts";
-import { palanquin } from "@/src/utils/fonts";
+import Image from "next/image"
+import ButtonCustom from "../lib/button/ButtonCustom"
+import styles from "./hero.module.scss"
+import { amiri } from "@/src/utils/fonts"
+import { palanquin } from "@/src/utils/fonts"
 
-function Hero() {
+function Hero({ data }) {
   return (
     <section className={`${styles.hero} ${amiri.className}`}>
       <div className="container">
         <div>
-          <h1>Give Your Nails Sweet Treat</h1>
+          <h1>{data.content.title}</h1>
           <div className={`${palanquin.className} ${styles.description}`}>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
-              tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
-            </p>
+            <p>{data.content.description}</p>
           </div>
           <div className={styles.btn}>
-            <ButtonCustom text={"Book Appointement"}></ButtonCustom>
-            <ButtonCustom text={"Our Service"}></ButtonCustom>
+            {data.content.button.map((item, index) => (
+              <ButtonCustom
+                text={item.Title}
+                key={index}
+                type="link"
+                href={item.url}
+              ></ButtonCustom>
+            ))}
           </div>
         </div>
         <div className={styles.image}>
@@ -27,7 +30,7 @@ function Hero() {
         </div>
       </div>
     </section>
-  );
+  )
 }
 
-export default Hero;
+export default Hero
