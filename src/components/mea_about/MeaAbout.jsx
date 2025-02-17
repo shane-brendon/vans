@@ -1,8 +1,9 @@
-import Image from "next/image";
-import styles from "./meaAbout.module.scss";
-import BtnIcons from "../lib/btnAndIcons/BtnIcons";
+import Image from "next/image"
+import styles from "./meaAbout.module.scss"
+import BtnIcons from "../lib/btnAndIcons/BtnIcons"
 
-function MeaAbout() {
+function MeaAbout({ data }) {
+  const content = data.content
   return (
     <section className={styles.wrapper}>
       <div className="container flex">
@@ -30,21 +31,16 @@ function MeaAbout() {
           ></Image>
         </div>
         <div>
-          <span className="tags">About Us</span>
-          <h2 className="block_title">We Have the Nail Knowledge</h2>
+          <span className="tags">{content.caption}</span>
+          <h2 className="block_title">{content.title}</h2>
           <div className="description">
-            <p>
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-              commodo ligula eget dolor. Aenean massa. Cum sociis natoque
-              penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-              Donec quam felis, ultricies nec, pellentesque.
-            </p>
+            <p>{content.description}</p>
           </div>
-          <BtnIcons />
+          <BtnIcons btn={content.button} icon={content.icon}/>
         </div>
       </div>
     </section>
-  );
+  )
 }
 
-export default MeaAbout;
+export default MeaAbout

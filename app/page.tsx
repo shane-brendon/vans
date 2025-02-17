@@ -9,7 +9,7 @@ import Testiamonials from "@/src/components/testimonials/Testiamonials"
 import { GraphQLClient, gql } from "graphql-request"
 
 async function fetchData() {
-  const endpoint = process.env.BO_URL || "" // Replace with your GraphQL API
+  const endpoint = process.env.BO_URL_GQL || "" // Replace with your GraphQL API
   const token = process.env.API_TOKEN
   const graphQLClient = new GraphQLClient(endpoint, {
     headers: {
@@ -18,7 +18,7 @@ async function fetchData() {
   })
 
   const query = gql`
-    query ExampleQuery {
+    query GetHomepage {
       homepage {
         hero {
           content {
@@ -27,6 +27,7 @@ async function fetchData() {
             button {
               Title
               url
+              isFill
             }
           }
           images {
@@ -34,6 +35,25 @@ async function fetchData() {
               nodes {
                 formats
               }
+            }
+          }
+        }
+        about_highlight {
+          content {
+            caption
+            title
+            description
+            button {
+              Title
+              url
+              isFill
+            }
+            icon {
+              icon {
+                formats
+              }
+              counter
+              description
             }
           }
         }
@@ -46,10 +66,12 @@ async function fetchData() {
 
 export default async function Home() {
   const { homepage }: any = await fetchData()
+
+  console.log(homepage)
   return (
     <main>
       <Hero data={homepage.hero} />
-      <MeaAbout />
+      <MeaAbout data={homepage.about_highlight} />
       <Services>
         <Cards />
       </Services>
