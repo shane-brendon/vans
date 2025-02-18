@@ -8,7 +8,7 @@ function BtnIcons({ btn, icon }) {
   return (
     <div className={styles.btn}>
       <div className={styles.styleWrapper}>
-        {icon.map((item, index) => (
+        {icon?.map((item, index) => (
           <div key={index}>
             <div className={styles.logo}>
               <ApprovedIcon width={60} height={60} fill={"#c6651a"} />
@@ -18,7 +18,7 @@ function BtnIcons({ btn, icon }) {
           </div>
         ))}
       </div>
-      {btn.map((item, index) => (
+      {btn?.map((item, index) => (
         <ButtonCustom text={item.Title} isFill={item.isFill} key={index} />
       ))}
     </div>

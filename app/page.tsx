@@ -57,6 +57,79 @@ async function fetchData() {
             }
           }
         }
+        service {
+          content {
+            caption
+            description
+            title
+          }
+          cards {
+            card_content {
+              title
+              description
+              button {
+                Title
+                url
+              }
+            }
+            image {
+              formats
+            }
+          }
+        }
+        service_list {
+          image {
+            images {
+              formats
+            }
+          }
+          content {
+            title
+            description
+            caption
+          }
+          item_list {
+            title
+            price
+            description
+          }
+        }
+        testimonies {
+          content {
+            title
+            caption
+            description
+          }
+          testimonies_item {
+            description
+            note
+            image {
+              formats
+            }
+            author_info {
+              name
+              occupation
+              author_photo {
+                formats
+              }
+            }
+          }
+        }
+        opening_hours {
+          content {
+            title
+            caption
+            button {
+              Title
+              isFill
+              url
+            }
+          }
+          items {
+            hours
+            days
+          }
+        }
       }
     }
   `
@@ -66,8 +139,6 @@ async function fetchData() {
 
 export default async function Home() {
   const { homepage }: any = await fetchData()
-
-  console.log(homepage)
   return (
     <main>
       <Hero data={homepage.hero} />
