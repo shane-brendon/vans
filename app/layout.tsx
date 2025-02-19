@@ -1,4 +1,3 @@
-import { Inter } from "next/font/google";
 import Header from "@/src/components/header/Header";
 import Footer from "@/src/components/footer/Footer";
 import { amiri } from "@/src/utils/fonts";
